@@ -1,8 +1,22 @@
 import random
 
 
+def random_direction():
+    directions = [
+        (0, 1),  # TOP
+        (0, -1),  # DOWN
+        (1, 0),  # RIGHT
+        (-1, 0)  # LEFT
+    ]
+    return random.choice(directions)
+
+
 class Point:
     def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def set_custom_position(self, x, y):
         self.x = x
         self.y = y
 
@@ -21,7 +35,8 @@ class Point:
         self.y = 0
 
     def random_move(self):
-        self.move(random.choice([-1, 1]), random.choice([-1, 1]))
+        move = random_direction()
+        self.move(*move)
 
     def __str__(self):
         return f'({self.x}, {self.y})'

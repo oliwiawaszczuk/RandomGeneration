@@ -1,15 +1,10 @@
-import numpy as np
-import plotly.graph_objects as go
-from Path import create_path
+from Path import create_room
+from simple_paths_to_map import create_window_to_simple_paths
+from simple_paths_with_rooms import create_window_to_simple_paths_with_rooms
+from simple_random_one_room import create_window_to_simple_one_room
+
 
 if __name__ == '__main__':
-    path1 = create_path(5444, 10)
+    # path1 = create_room(44, 1)
 
-    x_coords = [x.get_first_coordinate() for x in path1]
-    y_coords = [x.get_second_coordinate() for x in path1]
-
-    fig = go.Figure()
-
-    fig.add_trace(go.Scatter(x=x_coords, y=y_coords, mode='markers'))
-
-    fig.show()
+    create_window_to_simple_paths_with_rooms()
