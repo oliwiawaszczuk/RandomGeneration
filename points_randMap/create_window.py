@@ -25,7 +25,7 @@ def create_window(title):
     root.title(title)
     root['bg'] = '#252831'
 
-    button_to_generation = tk.Button(root, text='Generate Random Room')
+    button_to_generation = tk.Button(root, text=title)
     button_to_generation.pack(side=tk.TOP, pady=5)
 
     return root, button_to_generation
@@ -33,7 +33,7 @@ def create_window(title):
 
 def draw_points_on_tkinter_window(root, path_points, current_canvas):
     diff_points = set((point.get_first_coordinate(), point.get_second_coordinate()) for point in path_points)
-    print(f'generating random room with {len(path_points)} points, which contains {len(diff_points)} different points')
+    print(f'generating random points with {len(path_points)} points, which contains {len(diff_points)} different points')
 
     if current_canvas:
         current_canvas.destroy()

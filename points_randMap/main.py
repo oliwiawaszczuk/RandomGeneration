@@ -7,4 +7,4 @@ from simple_random_one_room import create_window_to_simple_one_room
 if __name__ == '__main__':
     # path1 = create_room(44, 1)
 
-    create_window_to_simple_paths_with_rooms()
+    create_window_to_simple_one_room()
